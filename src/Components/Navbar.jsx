@@ -3,14 +3,15 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import PropTypes from "prop-types";
 
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-function NavScrollExample() {
+function NavScrollExample(props) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">TextUtiles</Navbar.Brand>
+        <Navbar.Brand href="#">{props.title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -19,7 +20,7 @@ function NavScrollExample() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
+            <Nav.Link href="#action2">{props.Abt}</Nav.Link>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -48,5 +49,9 @@ function NavScrollExample() {
     </Navbar>
   );
 }
+NavScrollExample.propTypes = {
+  title: PropTypes.string.isRequired,
+  Abt: PropTypes.string.isRequired,
+}; //for setting proptype default as string
 
 export default NavScrollExample;
