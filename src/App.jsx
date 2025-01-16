@@ -8,7 +8,7 @@ import Textform from "./Components/Textform";
 function App() {
   return (
     <>
-      <NavScrollExample title="TextUtiles" Abt="About2" />
+      <NavScrollExample title="TextUtiles" Abt="About" />
       <div className="container my-3">
         <Textform heading="Enter the text to analyze" />
       </div>

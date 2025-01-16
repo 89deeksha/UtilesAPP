@@ -15,6 +15,12 @@ function Textform(props) {
     setText(newText);
   };
 
+  const handleclearclick = () => {
+    // console.log("Uppercaseclicked");
+    let newText = " ";
+    setText(newText);
+  };
+
   const handleonchange = (e) => {
     // console.log("onchangeclicked");
     setText(e.target.value); //this is for adding the text without value not able to enter any value
@@ -41,6 +47,9 @@ function Textform(props) {
         <button className="btn btn-primary ms-1" onClick={handlelowerclick}>
           Convert to lowercase
         </button>
+        <button className="btn btn-primary ms-1" onClick={handleclearclick}>
+          Text clear
+        </button>
       </div>
       <div className="container my-3">
         <h5>Your text summary</h5>
@@ -50,7 +59,9 @@ function Textform(props) {
         {/* Time taken by user to read these words as per internet on an average user take 0.008min to read single word */}
         <p> {0.008 * text.split(" ").length} minutes to read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <b>
+          <p>{text}</p>
+        </b>
       </div>
     </>
   );

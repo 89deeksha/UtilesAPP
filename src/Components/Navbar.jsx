@@ -10,7 +10,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 function NavScrollExample(props) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
+      <Container fluid className=" navbar-dark bg-dark">
         <Navbar.Brand href="#">{props.title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -19,8 +19,12 @@ function NavScrollExample(props) {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">{props.Abt}</Nav.Link>
+            <Nav.Link href="#action1" className="text-light">
+              Home
+            </Nav.Link>
+            <Nav.Link href="#action2" className="text-light">
+              {props.Abt}
+            </Nav.Link>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -42,7 +46,7 @@ function NavScrollExample(props) {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="btn btn-primary">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
